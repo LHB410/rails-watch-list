@@ -33,6 +33,8 @@ gem 'rest-client', '~> 2.0', '>= 2.0.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'cloudinary', '~> 1.16.0'
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
