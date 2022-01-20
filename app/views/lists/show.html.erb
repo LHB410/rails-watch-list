@@ -11,7 +11,7 @@
       <div class="card">
         <% if bookmark.photo.attached? %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.photo.key, height: 300, crop: :fill %>')">
-            The test
+            <%= bookmark.movie.title %>
           </div>
         <% else %>
           <%= image_tag bookmark.movie.poster_url, size: "200x320", class: "card-img-top" %>
