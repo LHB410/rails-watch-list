@@ -9,7 +9,13 @@
   <div class="row">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="card">
-        <%= image_tag bookmark.movie.poster_url, size: "200x320", class: "card-img-top" %>
+        <% if bookmark.photo.attached? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bookmark.photo.key, height: 300, crop: :fill %>')">
+            The test
+          </div>
+        <% else %>
+          <%= image_tag bookmark.movie.poster_url, size: "200x320", class: "card-img-top" %>
+        <% end %>
         <%= bookmark.movie.title %>
         <%= bookmark.movie.overview %>
         <%= bookmark.comment %>
@@ -20,6 +26,7 @@
   <%= link_to "Back", lists_path  %>
   <%= link_to "Delete list", list_path(@list), method: :delete, data: { confirm: "Are you sure?"}  %>
 </div>
+
 
 
 
