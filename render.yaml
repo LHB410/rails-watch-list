@@ -1,6 +1,6 @@
 databases:
   - name: rails-watch-list
-    databaseName: rails-watch-list
+    databaseName: rails_watch_list
     user: lhb410
 
 services:
