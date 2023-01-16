@@ -1,0 +1,18 @@
+databases:
+  - name: rails-watch-list
+    databaseName: rails-watch-list
+    user: lhb410
+
+services:
+  - type: web
+    name: rails-watch-list
+    env: ruby
+    buildCommand: "./render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: rails-watch-list
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
