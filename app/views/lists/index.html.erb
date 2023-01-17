@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: url(http://source.unsplash.com/1600x900/?cinema&format=webp)">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/1600x900/?cinema&format=webp)">
   <div class="container">
     <h1>My watch list</h1>
     <h4>Let's decide what movie to watch!</h2>
@@ -7,14 +7,13 @@
 </div>
 <div class="conatiner">
   <% if @lists.any? %>
-    <h1>Lists</h1>
-    <% @lists.each do |list| %>
-      <div class="cards">
+    <div class="cards">
+      <% @lists.each do |list| %>
         <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/1600x900/?<%= "#{list.name}" %>&format=webp)">
-        <%= link_to list.name, list_path(list) %>
+          <%= link_to list.name, list_path(list) %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% else %>
     <h1>Nothing here yet!</h1>
     <%= link_to "Add a List", new_list_path(@list), class: "btn btn-light"  %>
