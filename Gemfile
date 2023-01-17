@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 gem 'autoprefixer-rails', '10.2.5'
-gem 'font-awesome-sass', '~> 5.15'
+gem 'font-awesome-sass', "~> 6.1"
 gem 'simple_form'
 gem 'rest-client', '~> 2.0', '>= 2.0.1'
 

@@ -1,9 +1,16 @@
-<h1>Bookmarks#new</h1>
-<p>Find me in app/views/bookmarks/new.html.erb</p>
-<%= simple_form_for [ @list, @bookmark ] do |f| %>
-  <%= f.association :movie%>
-  <%= f.input :comment %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Add Bookmark" %>
-<% end %>
-<%= link_to "Back", lists_path  %>
+<div class="container">
+  <h1>Add a film!</h1>
+  <div class="form-card-bg" style="background-image: url(http://source.unsplash.com/1600x900/?cinema&format=webp)">
+    <div class="form-card">
+      <%= simple_form_for [ @list, @bookmark ] do |f| %>
+        <%= f.association :movie%>
+        <%= f.input :comment %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit "Add Film" %>
+      <% end %>
+      <%= link_to "Back", lists_path  %>
+    </div>
+
+  </div>
+
+</div>
