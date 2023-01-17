@@ -3,7 +3,7 @@
   <div class="form-card-bg" style="background-image: url(http://source.unsplash.com/1600x900/?cinema&format=webp)">
     <div class="form-card">
       <%= simple_form_for [ @list, @bookmark ] do |f| %>
-        <%= f.association :movie%>
+        <%= f.association :movie %>
         <%= f.input :comment %>
         <%= f.input :photo, as: :file, class:"btn btn-light" %>
         <%= f.submit "Add Film", class:"btn btn-primary" %>
