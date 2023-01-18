@@ -1,6 +1,29 @@
+a{
+  color: ghostwhite;
+  transition: ease-in-out 0.2s;
+}
+
+a:hover{
+  color: rgb(10, 192, 167);
+}
+
+.cursive{
+  font-family: 'Satisfy', cursive;
+  font-size: 5rem;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
 .card {
-  width: 300px;
+  width: 400px;
   padding: 2rem;
+}
+
+.card-img-top {
+  flex-shrink: 0;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
 
 .card-category {
@@ -22,7 +45,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 8rem;
   margin: auto;
   padding: 3rem;
 }
@@ -33,15 +56,33 @@
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  background-color: whitesmoke;
+  background-color: #665b5b;
   padding: 2rem;
   border-radius: 6px;
-  box-shadow: black 0.1px 0.1px 15px 0.1px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  opacity: 85%;
+
+  #list_name{
+    background-color: rgb(11, 11, 11);
+    color: white;
+  }
+
+  #bookmark_movie_id{
+    background-color: rgb(11, 11, 11);
+    color: white;
+  }
+
+  #bookmark_comment{
+    background-color: rgb(11, 11, 11);
+    color: white;
+  }
 }
 
 .form-card-bg {
   padding: 10rem;
   margin-top: 5rem;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .icon{
@@ -54,40 +95,21 @@
 .card-contain {
   margin: auto;
   margin-top: 3rem;
+  width: 400px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-// // Smallest device
-// @media (min-width: 100px) and (max-width: 575px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
+.drk-bg {
+  width: 100vw;
+  height: 100%;
+  background-image: url('abstract_bg.jpg');
+  background-repeat: no-repeat;
+}
 
-// // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
 
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
 
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
-
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-//   .cards {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
-
+@media (max-width: $mobile-breakpoint){
+  .form-card-bg {
+    padding: 10rem 0.5rem 10rem 0.5rem;
+  }
+}

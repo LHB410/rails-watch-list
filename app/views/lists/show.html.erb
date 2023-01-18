@@ -1,5 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/1600x900/?movie">
   <div class="container">
+    <h1 class="cursive">You've got great taste in Movies!</h1>
     <div class="title-icon">
       <h1><%= @list.name %></h1>
       <%= link_to list_path(@list), method: :delete, data: { confirm: "Are you sure?"} do %>
@@ -8,34 +9,39 @@
     </div>
     <h4>Let's decide what movie to watch!</h2>
     <%= link_to "Add Film", new_list_bookmark_path(@list), class: "btn btn-light"  %>
+    <%= link_to "Back to Lists", lists_path, class: "btn btn-dark"  %>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <% @list.bookmarks.each do |bookmark| %>
-    <div class="card-contain">
-      <% if bookmark.photo.attached? %>
-        <div class="card-category" style="background-image: url('<%= cl_image_path bookmark.photo.key, height: 300, crop: :fill %>')">
+<div class="drk-bg">
+  <div class="container">
+    <div class="cards">
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="card-contain">
+          <% if bookmark.photo.attached? %>
+            <div class="card-category" style="background-image: url('<%= cl_image_path bookmark.photo.key, height: 300, crop: :fill %>')">
+            </div>
+          <% else %>
+            <%= image_tag bookmark.movie.poster_url, size: "200x320", class: "card-img-top" %>
+          <% end %>
+          <div class="card">
+            <h4><%= bookmark.movie.title %></h4>
+            <br>
+            <%= bookmark.movie.overview %>
+            <br>
+            <hr>
+            <h5>Comments</h5>
+            <%= bookmark.comment %>
+            <hr>
+            <%= link_to list_bookmark_path(@list, bookmark), method: :delete, data: { confirm: "Are you sure?"} do %>
+              <i class="icon fa-solid fa-trash-can"></i>
+            <% end %>
+          </div>
         </div>
-      <% else %>
-        <%= image_tag bookmark.movie.poster_url, size: "200x320", class: "card-img-top" %>
       <% end %>
-      <div class="card">
-        <h5><%= bookmark.movie.title %></h5>
-        <br>
-        <%= bookmark.movie.overview %>
-        <%= bookmark.comment %>
-        <%= link_to list_bookmark_path(@list, bookmark), method: :delete, data: { confirm: "Are you sure?"} do %>
-          <i class="icon fa-solid fa-trash-can"></i>
-        <% end %>
-      </div>
-    <% end %>
     </div>
-
   </div>
-  <%= link_to "Back", lists_path, class: "btn btn-warning"  %>
-
 </div>
+
 
 
 
