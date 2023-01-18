@@ -1,15 +1,16 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://source.unsplash.com/1600x900/?movie">
   <div class="container">
     <h1 class="cursive">You've got great taste in Movies!</h1>
+    <h1><%= @list.name %></h1>
+    <h4>Let's decide what movie to watch!</h2>
     <div class="title-icon">
-      <h1><%= @list.name %></h1>
+      <%= link_to "Add Film", new_list_bookmark_path(@list), class: "btn btn-light"  %>
+      <%= link_to "Back to Lists", lists_path, class: "btn btn-dark"  %>
       <%= link_to list_path(@list), method: :delete, data: { confirm: "Are you sure?"} do %>
         <i class="icon fa-solid fa-trash-can"></i>
       <% end %>
     </div>
-    <h4>Let's decide what movie to watch!</h2>
-    <%= link_to "Add Film", new_list_bookmark_path(@list), class: "btn btn-light"  %>
-    <%= link_to "Back to Lists", lists_path, class: "btn btn-dark"  %>
+
   </div>
 </div>
 <div class="drk-bg">

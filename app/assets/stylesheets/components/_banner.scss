@@ -20,8 +20,11 @@
 
 .title-icon {
   display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .btn{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  max-height: 40px;
 }
