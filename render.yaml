@@ -3,7 +3,6 @@ databases:
     ipAllowList: []
     databaseName: rails_watch_list
     user: lhb410
-    plan: free
 
 services:
   - type: web
