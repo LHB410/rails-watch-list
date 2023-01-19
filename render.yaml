@@ -3,11 +3,13 @@ databases:
     ipAllowList: []
     databaseName: rails_watch_list
     user: lhb410
+    plan: free
 
 services:
   - type: web
     name: rails-watch-list
     env: ruby
+    plan: free
     buildCommand: "./render-build.sh"
     startCommand: "bundle exec rails s"
     envVars:

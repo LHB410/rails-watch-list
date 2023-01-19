@@ -3,6 +3,7 @@
   padding: 150px 0;
   background: linear-gradient(to right, grey, black);
   object-position: center;
+  z-index: 1;
 }
 
 .banner h1 {
@@ -27,4 +28,5 @@
 .btn{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   max-height: 40px;
+  border-radius: 6px;
 }
